@@ -5,13 +5,18 @@ import List from "./Components/List";
 
 function App() {
   const [people, setPeople] = useState(data);
-
+  const style = {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  };
   return (
-    <main>
-      <h3>{data.length} birthdays today</h3>
-      <List />
-      <button>Clear List</button>
-    </main>
+    <div style={style}>
+      <h3 style={{ margin: "20px" }}>{people.length} birthdays today</h3>
+      <List people={people} />
+      <button onClick={() => setPeople([])}>Clear List</button>
+    </div>
   );
 }
 
